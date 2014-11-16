@@ -1,6 +1,6 @@
 
-function Process(options) {
-  this.start = options.start;
+function Process(routine) {
+  this.start = routine;
 }
 
 module.exports = Process;
