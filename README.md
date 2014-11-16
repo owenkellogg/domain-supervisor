@@ -16,19 +16,10 @@ process.
     var Supervisor = require('domain-supervisor').Supervisor;
     var Process = require('domain-supervisor').Process;
 
-    function myCoRoutine() {
-      var loops = 0;
-
-      setInterval(function() {
-        console.log('valuably crunching data');
-        if (loops > 5) throw new Error('some terrible exception!'); 
-      }, 1000);
-    }
-
     var proc = new Process(myCoRoutine);
     var supervisor = new Supervisor();
 
-    supervisor.start(proc, function(error, restart, crash) {
+    supervisor.run(proc, function(error, restart, crash) {
       if (true) {
         console.log('Handling error:', error.stack);
         console.log('restarting...');
@@ -38,4 +29,12 @@ process.
         crash(error);
       }
     });
+
+    function myCoRoutine() {
+      var loops = 0;
+      setInterval(function() {
+        console.log('valuably crunching data');
+        if (loops > 5) throw new Error('some terrible exception!'); 
+      }, 1000);
+    }
     

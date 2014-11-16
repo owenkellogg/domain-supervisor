@@ -1,4 +1,4 @@
 
-module.exports.Supervisor = require('./supervisor');
-module.exports.Process = require('./process');
+module.exports.Supervisor = require(__dirname+'/src/supervisor');
+module.exports.Process = require(__dirname+'/src/process');
 
