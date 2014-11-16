@@ -1,0 +1,11 @@
+{
+  "name": "domain-supervisor",
+  "version": "0.1.0",
+  "description": "runs co-routines in domains, handling exceptions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/"
+  },
+  "author": "",
+  "license": "ISC"
+}
